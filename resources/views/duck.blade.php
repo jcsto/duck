@@ -8,7 +8,8 @@
                     <div class="card-header">Dashboard</div>
 
                     <div class="card-body">
-                        <h3>The Duck ate at:</h3>
+                        <h3>The Duck with color: <strong>{{ $color }}</strong>
+                            and height: <strong>{{ $height }} </strong> ate at:</h3>
                         <ul>
                         @foreach($ducks as $duck)
                             <li>{{ $duck->ate_at }}</li>

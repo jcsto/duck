@@ -5,10 +5,10 @@ namespace App\Http\Traits;
 trait DucksTrait {
     
     public function squawk() {
-        echo '-- Squawking --';
+        return '-- Squawking --';
     }
     
     public function fly() {
-        echo '-- Flying --';
+        return '-- Flying --';
     }
 }

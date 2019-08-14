@@ -19,3 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/duck', 'DuckController@show');
+Route::get('/walk', 'DuckController@walk');
+Route::get('/sleep', 'DuckController@sleep');
+Route::get('/eat', 'DuckController@eat');
+Route::get('/breath', 'DuckController@breath');
+Route::get('/wakeUp', 'DuckController@wakeUp');
+Route::get('/travelBigDistance', 'DuckController@travelBigDistance');

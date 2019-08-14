@@ -41,7 +41,7 @@ class DuckEat extends Command
         app()->call([$controller, 'eat'], []);
     
         $duck = new \App\Duck();
-        $duck->ate_at = date('Y-m-d H:i:j');
+        $duck->ate_at = date('Y-m-d H:i:s');
         $duck->save();
     }
 }

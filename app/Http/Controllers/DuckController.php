@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Traits\DucksTrait;
+use App\Http\Traits\LoggingTrait;
 
 class DuckController extends Controller
 {
     use DucksTrait;
+    use LoggingTrait;
+    
+    public $log;
     
     public function __construct()
     {
@@ -14,32 +18,47 @@ class DuckController extends Controller
     }
     
     public function walk() {
-        echo '-- Walking --';
+        $msg = '-- Walking --';
+        self::log($msg);
+        return $msg;
     }
     
     public function sleep() {
-        echo '-- Sleeping --';
+        $msg = '-- Sleeping --';
+        self::log($msg);
+        return $msg;
     }
     
     public function eat() {
-        echo '-- Eating --';
+        $msg = '-- Eating --';
+        self::log($msg);
+        return $msg;
     }
     
     public function breath() {
-        echo '-- Breathing --';
+        $msg = '-- Breathing --';
+        self::log($msg);
+        return $msg;
     }
     
     public function wakeUp() {
-        $this->squawk();
+        $msg = $this->squawk();
+        self::log($msg);
+        return $msg;
     }
     
     public function travelBigDistance() {
-        $this->fly();
+        $msg = $this->fly();
+        self::log($msg);
+        return $msg;
     }
     
     public function show() {
-        $ducks = \App\Duck::all();
-        return view('duck', compact('ducks'));
+        $ducksModel = new \App\Duck();
+        $ducks = $ducksModel::all();
+        $color = $ducksModel->getColor();
+        $height = $ducksModel->getHeight();
+        return view('duck', compact('ducks', 'color', 'height'));
     }
     
 }

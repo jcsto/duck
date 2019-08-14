@@ -11,8 +11,14 @@ class Duck extends Model
     
     public function __construct(array $attributes = [])
     {
-        $this->setColor('gray');
-        $this->setHeight(10);
+        $color = 'gray';
+        $height = 10;
+        if (!empty($attributes)) {
+            $color = $attributes['color'];
+            $height = $attributes['height'];
+        }
+        $this->setColor($color);
+        $this->setHeight($height);
         parent::__construct($attributes);
     }
     

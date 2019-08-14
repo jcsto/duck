@@ -37,6 +37,6 @@ trait LoggingTrait
         // Log message in file
         echo '-- Logging Message --<br/>';
         $msg .= ' ' . date('Y-m-d H:i:s');
-        Storage::append('/duck.log', $msg);
+        Storage::append('duck.log', $msg);
     }
 }

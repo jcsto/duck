@@ -10,8 +10,6 @@ class DuckController extends Controller
     use DucksTrait;
     use LoggingTrait;
     
-    public $log;
-    
     public function __construct()
     {
         $this->middleware('auth');
